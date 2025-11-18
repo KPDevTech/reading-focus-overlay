@@ -5,6 +5,7 @@ This tool helps you focus while reading or coding by adding:
 - A click blocker to prevent distractions
 - A blur overlay for the taskbar or screen
 - A focus frame that dims everything except selected areas
+- An alt tab blocker to prevent switching programs
   
 ## Recommended Workflow
 Recommended tools for reading with:
@@ -22,12 +23,13 @@ Just run the .exe from release
 
 ### Manual Setup
 1. Requires AutoHotkey v2.0+
-2. Run `main.ahk` (or compile it into an .exe using Ahk2Exe)
+2. Run `reading_focus_overlay.ahk` (or compile it into an .exe using Ahk2Exe)
 3. Use the default hotkeys:
    - `Ctrl + Shift + R` = Toggle pencil overlay
    - `Ctrl + Shift + B` = Toggle click block
    - `Ctrl + Shift + D` = Toggle taskbar dimming
    - `Ctrl + Shift + F` = Toggle focus frame
+   - `Ctrl + Shift + '` = Toggle alt tab block
    - `Shift + Esc` = Re-select focus area
    - `Esc` = Leave selection mode of focus area
 
@@ -49,22 +51,34 @@ Just run the .exe from release
   5. Press `Space` when finished to finalize all polygons and exit selection mode
   6. Press `Backspace` to remove the last added polygon if needed
 
+### Multi-Rectangle Mode
+- Create multiple rectangular selections in a single session
+- Perfect for selecting several separate text blocks, code sections, or interface elements
+- **Multi-Rectangle Workflow:**
+  1. Click and drag to create the first rectangle
+  2. Click and drag to create additional rectangles as needed
+  3. Press `Enter` when finished to finalize all rectangles and exit selection mode
+  4. Press `Backspace` to remove the last added rectangle if needed
+- Uses the same plus cursor as polygon mode for consistency
+
 ### Mode Selection
 - Switch between modes using the toolbar or number keys
 - Visual toolbar appears during selection with helpful buttons:
   - Rectangle mode (□): Select rectangular areas
+  - Multi-Rectangle mode (⌐): Select multiple rectangular areas
   - Polygon mode (⬡): Select custom-shaped areas
   - Cancel (✕): Exit selection mode
 - Active mode is highlighted in green
 
 ### Keyboard Shortcuts During Selection
 - `1` = Switch to Rectangle mode
-- `2` = Switch to Polygon mode
-- `3` = Cancel selection
-- `Enter` = Complete current polygon (in Polygon mode)
-- `Space` = Finalize all polygons and exit selection (in Polygon mode)
-- `Backspace` = Remove last added line in incomplete polygon (in Polygon mode)
-- `Shift + Backspace` = Remove last added polygon (in Polygon mode)
+- `2` = Switch to Multi-Rectangle mode
+- `3` = Switch to Polygon mode
+- `4` = Cancel selection
+- `Enter` = Complete current polygon (in Polygon mode) or finish all rectangles (in Multi-Rectangle mode)
+- `Space` = Finalize all polygons and exit selection (in Polygon mode only)
+- `Backspace` = Remove last added point/polygon (in Polygon mode) or remove last rectangle (in Multi-Rectangle mode)
+- `Shift + Backspace` = Remove last added polygon (in Polygon mode only)
 - `Esc` = Cancel selection and exit
 
 ## How to Customize Shortcuts
@@ -83,6 +97,7 @@ There is no UI — just edit the file and restart the script.
 - pencil.png
 - invisible-cursor.cur
 - plus_cursor.cur
+- alttab_blocker.ahk
 
 > Note on Antivirus Flags
 

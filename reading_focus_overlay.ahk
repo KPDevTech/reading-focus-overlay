@@ -11,7 +11,7 @@ OnExit(ExitCleanup)   ; pass function reference directly
 #Include "pencil_overlay.ahk"
 #Include "distraction.ahk"
 #Include "focus_frame.ahk"
-
+#Include "alttab_blocker.ahk"
 return   ; ← marks end of auto‑execute
 
 ;────────────────────────────────────────────────────────
